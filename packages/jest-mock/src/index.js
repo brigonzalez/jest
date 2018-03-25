@@ -319,7 +319,7 @@ class ModuleMockerClass {
         const mockConfig = mocker._ensureMockConfig(f);
         mockState.instances.push(this);
         mockState.calls.push(Array.prototype.slice.call(arguments));
-        mockState.timestamps.push(Date.now());
+        mockState.timestamps.push(process.hrtime()[1]);
 
         // Will be set to the return value of the mock if an error is not thrown
         let finalReturnValue;
